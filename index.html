@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio â Frontend Developer</title>
+  <title>Vlad — Frontend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -30,6 +30,59 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── PRELOADER ── */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .preloader-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .preloader-logo span { color: var(--accent); }
+
+    .preloader-bar {
+      width: 120px;
+      height: 3px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .preloader-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 100px;
+      animation: preload 1.2s ease-in-out forwards;
+    }
+
+    @keyframes preload {
+      0% { width: 0%; }
+      60% { width: 80%; }
+      100% { width: 100%; }
+    }
+
+    /* ── PARALLAX ── */
+    .hero { perspective: 1000px; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -39,7 +92,7 @@
       overflow-x: hidden;
     }
 
-    /* ââ NOISE TEXTURE ââ */
+    /* ── NOISE TEXTURE ── */
     body::before {
       content: '';
       position: fixed;
@@ -51,7 +104,7 @@
 
     [data-theme="light"] body::before { opacity: 0.015; }
 
-    /* ââ THEME TOGGLE ââ */
+    /* ── THEME TOGGLE ── */
     .theme-toggle {
       background: none;
       border: 1px solid var(--border);
@@ -82,7 +135,7 @@
     :root .theme-toggle .icon-sun { display: none; }
     :root .theme-toggle .icon-moon { display: inline; }
 
-    /* ââ LIGHT THEME TWEAKS ââ */
+    /* ── LIGHT THEME TWEAKS ── */
     [data-theme="light"] .hero-glow {
       background: radial-gradient(circle, rgba(107,138,0,0.1) 0%, transparent 70%);
     }
@@ -115,7 +168,7 @@
       background: rgba(245,245,247,0.95);
     }
 
-    /* ââ NAV ââ */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -157,7 +210,7 @@
 
     nav ul a:hover { color: var(--accent); }
 
-    /* ââ HERO ââ */
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -175,6 +228,7 @@
       top: -100px; right: -100px;
       pointer-events: none;
       animation: pulse 6s ease-in-out infinite;
+      transition: transform 0.3s ease-out;
     }
 
     .hero-glow2 {
@@ -185,6 +239,7 @@
       bottom: 50px; left: 200px;
       pointer-events: none;
       animation: pulse 8s ease-in-out infinite reverse;
+      transition: transform 0.3s ease-out;
     }
 
     @keyframes pulse {
@@ -196,6 +251,7 @@
       position: relative;
       z-index: 1;
       max-width: 800px;
+      transition: transform 0.3s ease-out;
     }
 
     .hero-badge {
@@ -303,7 +359,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ââ SKILLS ââ */
+    /* ── SKILLS ── */
     .skills-strip {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
@@ -353,7 +409,7 @@
       opacity: 0.6;
     }
 
-    /* ââ SECTION ââ */
+    /* ── SECTION ── */
     section {
       padding: 6rem 4rem;
       position: relative;
@@ -377,7 +433,7 @@
       line-height: 1.1;
     }
 
-    /* ââ PROJECTS ââ */
+    /* ── PROJECTS ── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -452,7 +508,7 @@
       line-height: 1.6;
     }
 
-    /* ââ ABOUT ââ */
+    /* ── ABOUT ── */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -501,7 +557,7 @@
       font-weight: 400;
     }
 
-    /* ââ SKILL BARS ââ */
+    /* ── SKILL BARS ── */
     .skills-section {
       padding: 6rem 4rem;
       border-top: 1px solid var(--border);
@@ -577,7 +633,7 @@
       .skills-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
-    /* ââ TYPEWRITER ââ */
+    /* ── TYPEWRITER ── */
     .typewriter-wrap {
       display: inline-block;
       position: relative;
@@ -613,7 +669,7 @@
       50% { opacity: 0; }
     }
 
-    /* ââ CONTACT FORM ââ */
+    /* ── CONTACT FORM ── */
     .contact-wrap {
       max-width: 600px;
       margin: 0 auto;
@@ -719,7 +775,7 @@
       .form-row { grid-template-columns: 1fr; }
     }
 
-    /* ââ BURGER MENU ââ */
+    /* ── BURGER MENU ── */
     .burger {
       display: none;
       flex-direction: column;
@@ -780,7 +836,7 @@
 
     .mobile-overlay a:hover { color: var(--accent); }
 
-    /* ââ PROJECT LINKS ââ */
+    /* ── PROJECT LINKS ── */
     .project-links {
       display: flex;
       gap: 0.6rem;
@@ -818,7 +874,7 @@
       border-color: var(--muted);
     }
 
-    /* ââ THUMB MOCKUPS ââ */
+    /* ── THUMB MOCKUPS ── */
     .thumb-mockup {
       position: relative;
       z-index: 1;
@@ -858,7 +914,7 @@
     .mock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 10px; }
     .mock-box { height: 24px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06); }
 
-    /* ââ TIMELINE ââ */
+    /* ── TIMELINE ── */
     .timeline-section {
       padding: 6rem 4rem;
       border-top: 1px solid var(--border);
@@ -948,7 +1004,7 @@
       .timeline-dot { left: -2rem; }
     }
 
-    /* ââ BACK TO TOP ââ */
+    /* ── BACK TO TOP ── */
     .back-to-top {
       position: fixed;
       bottom: 2rem;
@@ -983,7 +1039,7 @@
       box-shadow: 0 8px 30px rgba(200,240,58,0.4);
     }
 
-    /* ââ SCROLL ANIMATIONS ââ */
+    /* ── SCROLL ANIMATIONS ── */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -996,7 +1052,7 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
-    /* ââ FOOTER ââ */
+    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 4rem;
@@ -1007,7 +1063,7 @@
       font-size: 0.82rem;
     }
 
-    /* ââ RESPONSIVE ââ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
       nav ul { display: none; }
@@ -1027,9 +1083,15 @@
 </head>
 <body>
 
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">vlad<span>.</span>dev</div>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+  </div>
+
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">dev<span>.</span>portfolio</div>
+    <div class="nav-logo">vlad<span>.</span>dev</div>
     <div style="display:flex;align-items:center;gap:2rem;">
       <ul>
         <li><a href="#projects">Projects</a></li>
@@ -1038,8 +1100,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="icon-moon">ð</span>
-        <span class="icon-sun">âï¸</span>
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
       </button>
     </div>
     <button class="burger" id="burger" aria-label="Menu">
@@ -1063,10 +1125,10 @@
       <div class="hero-badge">Available for work</div>
       <h1>I build<br/><span class="typewriter-wrap"><em class="typed-text" id="typed"></em><span class="cursor"></span></span></h1>
       <p class="hero-desc">
-        I craft clean, responsive web interfaces with HTML, CSS, JavaScript & React â focused on pixel-perfect layouts and smooth user experiences.
+        I craft clean, responsive web interfaces with HTML, CSS, JavaScript & React — focused on pixel-perfect layouts and smooth user experiences.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View my work â</a>
+        <a href="#projects" class="btn btn-primary">View my work ↓</a>
         <a href="#contact" class="btn btn-outline">Get in touch</a>
       </div>
     </div>
@@ -1104,7 +1166,7 @@
       <div class="skills-intro reveal">
         <div class="section-label">My Skills</div>
         <h2>What I<br/>work with</h2>
-        <p>I focus on building solid, beautiful, and fast interfaces â from core HTML & CSS to JavaScript and React. Every project sharpens these skills further.</p>
+        <p>I focus on building solid, beautiful, and fast interfaces — from core HTML & CSS to JavaScript and React. Every project sharpens these skills further.</p>
       </div>
       <div class="skill-bars">
         <div class="skill-item">
@@ -1190,7 +1252,7 @@
           <div class="project-title">Product Landing Page</div>
           <p class="project-desc">A clean, conversion-focused landing page with modern layout, hero section and call-to-action.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo â</a>
+            <a href="#" class="project-link">Live Demo ↗</a>
             <a href="#" class="project-link secondary">Source Code</a>
           </div>
         </div>
@@ -1222,7 +1284,7 @@
           <div class="project-title">Creative Portfolio</div>
           <p class="project-desc">A visually bold personal portfolio with smooth animations and responsive grid layout.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo â</a>
+            <a href="#" class="project-link">Live Demo ↗</a>
             <a href="#" class="project-link secondary">Source Code</a>
           </div>
         </div>
@@ -1248,9 +1310,9 @@
             <span class="tag">Flexbox</span>
           </div>
           <div class="project-title">Restaurant Website</div>
-          <p class="project-desc">A warm, appetizing website for a local restaurant â menu, gallery and contact form included.</p>
+          <p class="project-desc">A warm, appetizing website for a local restaurant — menu, gallery and contact form included.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo â</a>
+            <a href="#" class="project-link">Live Demo ↗</a>
             <a href="#" class="project-link secondary">Source Code</a>
           </div>
         </div>
@@ -1265,10 +1327,10 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <h2>Turning ideas<br/>into interfaces</h2>
-        <p>I'm a <strong>passionate Frontend Developer</strong> focused on building clean, responsive, and visually appealing web interfaces using HTML, CSS, JavaScript & React.</p>
-        <p>Although I'm early in my career, I'm <strong>highly motivated and a fast learner</strong> â eager to take on real-world projects and grow through collaboration.</p>
+        <p>I'm <strong>Vlad</strong> — a passionate Frontend Developer focused on building clean, responsive, and visually appealing web interfaces using HTML, CSS, JavaScript & React.</p>
+        <p>Although I'm early in my career, I'm <strong>highly motivated and a fast learner</strong> — eager to take on real-world projects and grow through collaboration.</p>
         <p>I love attention to detail, pixel-perfect layouts, and creating experiences that feel <strong>smooth and delightful</strong> to use.</p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:0.5rem">Let's work together â</a>
+        <a href="#contact" class="btn btn-primary" style="margin-top:0.5rem">Let's work together →</a>
       </div>
       <div class="stats-grid reveal reveal-delay-2">
         <div class="stat-card">
@@ -1284,7 +1346,7 @@
           <div class="stat-label">Commitment to quality</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">â</div>
+          <div class="stat-num">∞</div>
           <div class="stat-label">Eagerness to learn</div>
         </div>
       </div>
@@ -1299,7 +1361,7 @@
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">2026 â Present</div>
+          <div class="timeline-date">2026 — Present</div>
           <div class="timeline-title">Freelance Frontend Developer</div>
           <p class="timeline-desc">Building responsive websites and landing pages for clients. Focusing on clean code, modern design, and pixel-perfect layouts.</p>
           <div class="project-tags" style="margin-top:0.8rem">
@@ -1312,7 +1374,7 @@
       <div class="timeline-item reveal reveal-delay-1">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">2025 â 2026</div>
+          <div class="timeline-date">2025 — 2026</div>
           <div class="timeline-title">Learning React & JavaScript</div>
           <p class="timeline-desc">Deepening knowledge of modern JavaScript, component-based architecture, and building interactive web applications with React.</p>
           <div class="project-tags" style="margin-top:0.8rem">
@@ -1325,7 +1387,7 @@
       <div class="timeline-item reveal reveal-delay-2">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">2024 â 2025</div>
+          <div class="timeline-date">2024 — 2025</div>
           <div class="timeline-title">Self-taught Web Development</div>
           <p class="timeline-desc">Started learning HTML & CSS from scratch. Built first projects, explored responsive design, CSS animations, and web fundamentals.</p>
           <div class="project-tags" style="margin-top:0.8rem">
@@ -1339,33 +1401,33 @@
   </section>
 
   <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">â</button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-wrap reveal">
       <div class="section-label">Get in touch</div>
       <h2>Let's build<br/>something together</h2>
-      <p>I'm open to freelance projects, collaborations, and opportunities. Drop me a message â I'd love to hear about your idea.</p>
+      <p>I'm open to freelance projects, collaborations, and opportunities. Drop me a message — I'd love to hear about your idea.</p>
 
       <div class="form-success" id="formSuccess">
-        â Message sent! I'll get back to you within 24 hours.
+        ✅ Message sent! I'll get back to you within 24 hours.
       </div>
 
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqowqay" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label>Your name</label>
-            <input type="text" placeholder="John Doe" required />
+            <input type="text" name="name" placeholder="John Doe" required />
           </div>
           <div class="form-group">
             <label>Email address</label>
-            <input type="email" placeholder="john@example.com" required />
+            <input type="email" name="email" placeholder="john@example.com" required />
           </div>
         </div>
         <div class="form-group">
           <label>Project type</label>
-          <select>
+          <select name="project_type">
             <option value="">Select a type...</option>
             <option>Landing Page</option>
             <option>Portfolio Website</option>
@@ -1375,30 +1437,61 @@
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea placeholder="Tell me about your project â what do you need, timeline, budget..."></textarea>
+          <textarea name="message" placeholder="Tell me about your project — what do you need, timeline, budget..."></textarea>
         </div>
         <div class="form-submit">
-          <span class="form-note">ð¬ Usually reply within 24h</span>
-          <button type="submit" class="btn btn-primary">Send message â</button>
+          <span class="form-note">💬 Usually reply within 24h</span>
+          <button type="submit" class="btn btn-primary">Send message →</button>
         </div>
       </form>
 
       <div class="contact-links">
-        <a href="mailto:your@email.com" class="btn btn-outline">âï¸ Email directly</a>
-        <a href="#" class="btn btn-outline">LinkedIn</a>
-        <a href="#" class="btn btn-outline">GitHub</a>
+        <a href="mailto:29vladko2009@gmail.com" class="btn btn-outline">✉️ Email directly</a>
+        <a href="https://www.linkedin.com/in/%D0%B2%D0%BB%D0%B0%D0%B4-%D0%BF%D1%80%D0%B8%D1%81%D1%8F%D0%B6%D0%BD%D1%8E%D0%BA-2a89693b3/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/igrokoprs" target="_blank" class="btn btn-outline">GitHub</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <span>Â© 2026 Frontend Developer</span>
+    <span>© 2026 Vlad Prysiazhniuk</span>
     <span>Built with HTML, CSS & JS</span>
   </footer>
 
   <script>
-    // ââ SKILL BARS ââ
+    // ── PRELOADER ──
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hide');
+      }, 1400);
+    });
+
+    // ── PARALLAX ──
+    const heroSection = document.querySelector('.hero');
+    const glow1 = document.querySelector('.hero-glow');
+    const glow2 = document.querySelector('.hero-glow2');
+    const heroContent = document.querySelector('.hero-content');
+
+    if (window.innerWidth > 768) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        glow1.style.transform = `translate(${x * 40}px, ${y * 40}px) scale(1)`;
+        glow2.style.transform = `translate(${x * -30}px, ${y * -30}px) scale(1)`;
+        heroContent.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
+      });
+
+      heroSection.addEventListener('mouseleave', () => {
+        glow1.style.transform = '';
+        glow2.style.transform = '';
+        heroContent.style.transform = '';
+      });
+    }
+
+    // ── SKILL BARS ──
     const skillsEl = document.getElementById('skills');
     const bars = document.querySelectorAll('.bar-fill');
 
@@ -1432,7 +1525,7 @@
       vis = now;
     }, { passive: true });
 
-    // ââ TYPEWRITER ââ
+    // ── TYPEWRITER ──
     const words = ['Landing Pages', 'Interfaces', 'Portfolios', 'Websites', 'UI Components'];
     let wi = 0, ci = 0, deleting = false;
     const el = document.getElementById('typed');
@@ -1450,19 +1543,34 @@
     }
     setTimeout(type, 800);
 
-    // ââ CONTACT FORM ââ
+    // ── CONTACT FORM ──
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
+      const form = this;
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(() => {
-        this.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-      }, 1200);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          btn.textContent = 'Error — try again';
+          btn.disabled = false;
+        }
+      }).catch(() => {
+        btn.textContent = 'Error — try again';
+        btn.disabled = false;
+      });
     });
 
-    // ââ BURGER MENU ââ
+    // ── BURGER MENU ──
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -1481,7 +1589,7 @@
       });
     });
 
-    // ââ SCROLL REVEAL ââ
+    // ── SCROLL REVEAL ──
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1492,7 +1600,7 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // ââ THEME TOGGLE ââ
+    // ── THEME TOGGLE ──
     const themeToggle = document.getElementById('themeToggle');
     const saved = localStorage.getItem('theme');
     if (saved) document.documentElement.setAttribute('data-theme', saved);
@@ -1509,7 +1617,7 @@
       }
     });
 
-    // ââ BACK TO TOP ââ
+    // ── BACK TO TOP ──
     const backBtn = document.getElementById('backToTop');
 
     window.addEventListener('scroll', () => {
