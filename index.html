@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio – Frontend Developer</title>
+  <title>Portfolio â Frontend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -39,7 +39,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE TEXTURE ── */
+    /* ââ NOISE TEXTURE ââ */
     body::before {
       content: '';
       position: fixed;
@@ -51,7 +51,7 @@
 
     [data-theme="light"] body::before { opacity: 0.015; }
 
-    /* ── THEME TOGGLE ── */
+    /* ââ THEME TOGGLE ââ */
     .theme-toggle {
       background: none;
       border: 1px solid var(--border);
@@ -82,7 +82,7 @@
     :root .theme-toggle .icon-sun { display: none; }
     :root .theme-toggle .icon-moon { display: inline; }
 
-    /* ── LIGHT THEME TWEAKS ── */
+    /* ââ LIGHT THEME TWEAKS ââ */
     [data-theme="light"] .hero-glow {
       background: radial-gradient(circle, rgba(107,138,0,0.1) 0%, transparent 70%);
     }
@@ -115,7 +115,7 @@
       background: rgba(245,245,247,0.95);
     }
 
-    /* ── NAV ── */
+    /* ââ NAV ââ */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -157,7 +157,7 @@
 
     nav ul a:hover { color: var(--accent); }
 
-    /* ── HERO ── */
+    /* ââ HERO ââ */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -303,7 +303,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── SKILLS ── */
+    /* ââ SKILLS ââ */
     .skills-strip {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
@@ -353,7 +353,7 @@
       opacity: 0.6;
     }
 
-    /* ── SECTION ── */
+    /* ââ SECTION ââ */
     section {
       padding: 6rem 4rem;
       position: relative;
@@ -377,7 +377,7 @@
       line-height: 1.1;
     }
 
-    /* ── PROJECTS ── */
+    /* ââ PROJECTS ââ */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -452,7 +452,7 @@
       line-height: 1.6;
     }
 
-    /* ── ABOUT ── */
+    /* ââ ABOUT ââ */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -501,7 +501,7 @@
       font-weight: 400;
     }
 
-    /* ── SKILL BARS ── */
+    /* ââ SKILL BARS ââ */
     .skills-section {
       padding: 6rem 4rem;
       border-top: 1px solid var(--border);
@@ -577,7 +577,7 @@
       .skills-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
-    /* ── TYPEWRITER ── */
+    /* ââ TYPEWRITER ââ */
     .typewriter-wrap {
       display: inline-block;
       position: relative;
@@ -613,7 +613,7 @@
       50% { opacity: 0; }
     }
 
-    /* ── CONTACT FORM ── */
+    /* ââ CONTACT FORM ââ */
     .contact-wrap {
       max-width: 600px;
       margin: 0 auto;
@@ -719,7 +719,7 @@
       .form-row { grid-template-columns: 1fr; }
     }
 
-    /* ── BURGER MENU ── */
+    /* ââ BURGER MENU ââ */
     .burger {
       display: none;
       flex-direction: column;
@@ -780,7 +780,7 @@
 
     .mobile-overlay a:hover { color: var(--accent); }
 
-    /* ── PROJECT LINKS ── */
+    /* ââ PROJECT LINKS ââ */
     .project-links {
       display: flex;
       gap: 0.6rem;
@@ -818,7 +818,7 @@
       border-color: var(--muted);
     }
 
-    /* ── THUMB MOCKUPS ── */
+    /* ââ THUMB MOCKUPS ââ */
     .thumb-mockup {
       position: relative;
       z-index: 1;
@@ -858,7 +858,7 @@
     .mock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 10px; }
     .mock-box { height: 24px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06); }
 
-    /* ── TIMELINE ── */
+    /* ââ TIMELINE ââ */
     .timeline-section {
       padding: 6rem 4rem;
       border-top: 1px solid var(--border);
@@ -948,7 +948,7 @@
       .timeline-dot { left: -2rem; }
     }
 
-    /* ── BACK TO TOP ── */
+    /* ââ BACK TO TOP ââ */
     .back-to-top {
       position: fixed;
       bottom: 2rem;
@@ -983,7 +983,7 @@
       box-shadow: 0 8px 30px rgba(200,240,58,0.4);
     }
 
-    /* ── SCROLL ANIMATIONS ── */
+    /* ââ SCROLL ANIMATIONS ââ */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -996,7 +996,7 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
-    /* ── FOOTER ── */
+    /* ââ FOOTER ââ */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 4rem;
@@ -1007,7 +1007,7 @@
       font-size: 0.82rem;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ââ RESPONSIVE ââ */
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
       nav ul { display: none; }
@@ -1038,8 +1038,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="icon-moon">🌙</span>
-        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">ð</span>
+        <span class="icon-sun">âï¸</span>
       </button>
     </div>
     <button class="burger" id="burger" aria-label="Menu">
@@ -1063,10 +1063,10 @@
       <div class="hero-badge">Available for work</div>
       <h1>I build<br/><span class="typewriter-wrap"><em class="typed-text" id="typed"></em><span class="cursor"></span></span></h1>
       <p class="hero-desc">
-        I craft clean, responsive web interfaces with HTML, CSS, JavaScript & React — focused on pixel-perfect layouts and smooth user experiences.
+        I craft clean, responsive web interfaces with HTML, CSS, JavaScript & React â focused on pixel-perfect layouts and smooth user experiences.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View my work ↓</a>
+        <a href="#projects" class="btn btn-primary">View my work â</a>
         <a href="#contact" class="btn btn-outline">Get in touch</a>
       </div>
     </div>
@@ -1104,7 +1104,7 @@
       <div class="skills-intro reveal">
         <div class="section-label">My Skills</div>
         <h2>What I<br/>work with</h2>
-        <p>I focus on building solid, beautiful, and fast interfaces — from core HTML & CSS to JavaScript and React. Every project sharpens these skills further.</p>
+        <p>I focus on building solid, beautiful, and fast interfaces â from core HTML & CSS to JavaScript and React. Every project sharpens these skills further.</p>
       </div>
       <div class="skill-bars">
         <div class="skill-item">
@@ -1190,7 +1190,7 @@
           <div class="project-title">Product Landing Page</div>
           <p class="project-desc">A clean, conversion-focused landing page with modern layout, hero section and call-to-action.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo ↗</a>
+            <a href="#" class="project-link">Live Demo â</a>
             <a href="#" class="project-link secondary">Source Code</a>
           </div>
         </div>
@@ -1222,7 +1222,7 @@
           <div class="project-title">Creative Portfolio</div>
           <p class="project-desc">A visually bold personal portfolio with smooth animations and responsive grid layout.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo ↗</a>
+            <a href="#" class="project-link">Live Demo â</a>
             <a href="#" class="project-link secondary">Source Code</a>
           </div>
         </div>
@@ -1248,9 +1248,9 @@
             <span class="tag">Flexbox</span>
           </div>
           <div class="project-title">Restaurant Website</div>
-          <p class="project-desc">A warm, appetizing website for a local restaurant — menu, gallery and contact form included.</p>
+          <p class="project-desc">A warm, appetizing website for a local restaurant â menu, gallery and contact form included.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo ↗</a>
+            <a href="#" class="project-link">Live Demo â</a>
             <a href="#" class="project-link secondary">Source Code</a>
           </div>
         </div>
@@ -1266,9 +1266,9 @@
       <div class="about-text reveal">
         <h2>Turning ideas<br/>into interfaces</h2>
         <p>I'm a <strong>passionate Frontend Developer</strong> focused on building clean, responsive, and visually appealing web interfaces using HTML, CSS, JavaScript & React.</p>
-        <p>Although I'm early in my career, I'm <strong>highly motivated and a fast learner</strong> — eager to take on real-world projects and grow through collaboration.</p>
+        <p>Although I'm early in my career, I'm <strong>highly motivated and a fast learner</strong> â eager to take on real-world projects and grow through collaboration.</p>
         <p>I love attention to detail, pixel-perfect layouts, and creating experiences that feel <strong>smooth and delightful</strong> to use.</p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:0.5rem">Let's work together →</a>
+        <a href="#contact" class="btn btn-primary" style="margin-top:0.5rem">Let's work together â</a>
       </div>
       <div class="stats-grid reveal reveal-delay-2">
         <div class="stat-card">
@@ -1284,7 +1284,7 @@
           <div class="stat-label">Commitment to quality</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">∞</div>
+          <div class="stat-num">â</div>
           <div class="stat-label">Eagerness to learn</div>
         </div>
       </div>
@@ -1299,7 +1299,7 @@
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">2026 — Present</div>
+          <div class="timeline-date">2026 â Present</div>
           <div class="timeline-title">Freelance Frontend Developer</div>
           <p class="timeline-desc">Building responsive websites and landing pages for clients. Focusing on clean code, modern design, and pixel-perfect layouts.</p>
           <div class="project-tags" style="margin-top:0.8rem">
@@ -1312,7 +1312,7 @@
       <div class="timeline-item reveal reveal-delay-1">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">2025 — 2026</div>
+          <div class="timeline-date">2025 â 2026</div>
           <div class="timeline-title">Learning React & JavaScript</div>
           <p class="timeline-desc">Deepening knowledge of modern JavaScript, component-based architecture, and building interactive web applications with React.</p>
           <div class="project-tags" style="margin-top:0.8rem">
@@ -1325,7 +1325,7 @@
       <div class="timeline-item reveal reveal-delay-2">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">2024 — 2025</div>
+          <div class="timeline-date">2024 â 2025</div>
           <div class="timeline-title">Self-taught Web Development</div>
           <p class="timeline-desc">Started learning HTML & CSS from scratch. Built first projects, explored responsive design, CSS animations, and web fundamentals.</p>
           <div class="project-tags" style="margin-top:0.8rem">
@@ -1339,17 +1339,17 @@
   </section>
 
   <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">â</button>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-wrap reveal">
       <div class="section-label">Get in touch</div>
       <h2>Let's build<br/>something together</h2>
-      <p>I'm open to freelance projects, collaborations, and opportunities. Drop me a message — I'd love to hear about your idea.</p>
+      <p>I'm open to freelance projects, collaborations, and opportunities. Drop me a message â I'd love to hear about your idea.</p>
 
       <div class="form-success" id="formSuccess">
-        ✅ Message sent! I'll get back to you within 24 hours.
+        â Message sent! I'll get back to you within 24 hours.
       </div>
 
       <form class="contact-form" id="contactForm">
@@ -1375,16 +1375,16 @@
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea placeholder="Tell me about your project — what do you need, timeline, budget..."></textarea>
+          <textarea placeholder="Tell me about your project â what do you need, timeline, budget..."></textarea>
         </div>
         <div class="form-submit">
-          <span class="form-note">💬 Usually reply within 24h</span>
-          <button type="submit" class="btn btn-primary">Send message →</button>
+          <span class="form-note">ð¬ Usually reply within 24h</span>
+          <button type="submit" class="btn btn-primary">Send message â</button>
         </div>
       </form>
 
       <div class="contact-links">
-        <a href="mailto:your@email.com" class="btn btn-outline">✉️ Email directly</a>
+        <a href="mailto:your@email.com" class="btn btn-outline">âï¸ Email directly</a>
         <a href="#" class="btn btn-outline">LinkedIn</a>
         <a href="#" class="btn btn-outline">GitHub</a>
       </div>
@@ -1393,12 +1393,12 @@
 
   <!-- FOOTER -->
   <footer>
-    <span>© 2026 Frontend Developer</span>
+    <span>Â© 2026 Frontend Developer</span>
     <span>Built with HTML, CSS & JS</span>
   </footer>
 
   <script>
-    // ── SKILL BARS ──
+    // ââ SKILL BARS ââ
     const skillsEl = document.getElementById('skills');
     const bars = document.querySelectorAll('.bar-fill');
 
@@ -1432,7 +1432,7 @@
       vis = now;
     }, { passive: true });
 
-    // ── TYPEWRITER ──
+    // ââ TYPEWRITER ââ
     const words = ['Landing Pages', 'Interfaces', 'Portfolios', 'Websites', 'UI Components'];
     let wi = 0, ci = 0, deleting = false;
     const el = document.getElementById('typed');
@@ -1450,7 +1450,7 @@
     }
     setTimeout(type, 800);
 
-    // ── CONTACT FORM ──
+    // ââ CONTACT FORM ââ
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
@@ -1462,7 +1462,7 @@
       }, 1200);
     });
 
-    // ── BURGER MENU ──
+    // ââ BURGER MENU ââ
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -1481,7 +1481,7 @@
       });
     });
 
-    // ── SCROLL REVEAL ──
+    // ââ SCROLL REVEAL ââ
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1492,7 +1492,7 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // ── THEME TOGGLE ──
+    // ââ THEME TOGGLE ââ
     const themeToggle = document.getElementById('themeToggle');
     const saved = localStorage.getItem('theme');
     if (saved) document.documentElement.setAttribute('data-theme', saved);
@@ -1509,7 +1509,7 @@
       }
     });
 
-    // ── BACK TO TOP ──
+    // ââ BACK TO TOP ââ
     const backBtn = document.getElementById('backToTop');
 
     window.addEventListener('scroll', () => {
